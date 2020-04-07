@@ -41,7 +41,8 @@ namespace Calculator
 
         private void btnOperation_Click(object sender, RoutedEventArgs e)
         {
-            if (previousOperation == Operation.None)
+            string op = txtDisplay.Text.Substring(txtDisplay.Text.Length - 1, 1);
+            if (previousOperation == Operation.None && txtDisplay.Text != "0")
             {
                 currentOperation = BtnOperation((string)(sender as Button).Content);
                 previousOperation = currentOperation;
@@ -49,21 +50,14 @@ namespace Calculator
             }
             else if (previousOperation != Operation.None)
             {
-                if (txtDisplay.Text.Substring(txtDisplay.Text.Length - 1, 1) != "+" ||
-                    txtDisplay.Text.Substring(txtDisplay.Text.Length - 1, 1) != "-" ||
-                    txtDisplay.Text.Substring(txtDisplay.Text.Length - 1, 1) != "x" ||
-                    txtDisplay.Text.Substring(txtDisplay.Text.Length - 1, 1) != "/")
-                {
-                    txtDisplay.Text += (sender as Button).Content;
-                }
-                else
+                if (op == "+" || op == "-" || op == "/" || op == "*")
                 {
                     return;
                 }
-            }
-            else
-            {
-                return;
+                else
+                {
+                    txtDisplay.Text += (sender as Button).Content;
+                }
             }
         }
 
@@ -166,8 +160,19 @@ namespace Calculator
 
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
-
-            txtDisplay.Text = txtDisplay.Text.Substring(0, txtDisplay.Text.Length - 1);
+            if (txtDisplay.Text.Length > 0)
+            {
+                txtDisplay.Text = txtDisplay.Text.Substring(0, txtDisplay.Text.Length - 1);
+            }
+            
+            if (txtDisplay.Text == "")
+            {
+                txtDisplay.Text = "0";
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void btnC_Click(object sender, RoutedEventArgs e)
