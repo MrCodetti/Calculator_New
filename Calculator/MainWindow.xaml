@@ -14,7 +14,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="2.5*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="txtDisplay" Grid.Row="0" HorizontalAlignment="Right"  TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="48" TextAlignment="Right" Margin="0,0,20,0" BorderThickness="0"/>
+
+        <TextBox x:Name="txtDisplay" Grid.Row="0" HorizontalAlignment="Right"  TextWrapping="Wrap" Text="0" VerticalAlignment="Center" FontSize="48" TextAlignment="Right" Margin="0,19,20,19" BorderThickness="0" Height="82"/>
         <Grid Grid.Row="1" Margin="10, 10, 10, 10" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -29,25 +30,25 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btn0" Grid.Column="1" Grid.Row="4" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">0</Button>
-            <Button x:Name="btn1" Grid.Column="0" Grid.Row="3" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">1</Button>
-            <Button x:Name="btn2" Grid.Column="1" Grid.Row="3" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">2</Button>
-            <Button x:Name="btn3" Grid.Column="2" Grid.Row="3" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">3</Button>
-            <Button x:Name="btn4" Grid.Column="0" Grid.Row="2" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">4</Button>
-            <Button x:Name="btn5" Grid.Column="1" Grid.Row="2" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">5</Button>
-            <Button x:Name="btn6" Grid.Column="2" Grid.Row="2" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">6</Button>
-            <Button x:Name="btn7" Grid.Column="0" Grid.Row="1" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">7</Button>
-            <Button x:Name="btn8" Grid.Column="1" Grid.Row="1" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">8</Button>
-            <Button x:Name="btn9" Grid.Column="2" Grid.Row="1" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers">9</Button>
-            <Button x:Name="PlusMinus" Grid.Column="0" Grid.Row="4" FontSize="36" Background="{x:Null}" BorderThickness="0">+/-</Button>
-            <Button x:Name="btnPunkt" Grid.Column="2" Grid.Row="4" FontSize="36" Background="{x:Null}" BorderThickness="0">.</Button>
-            <Button x:Name="btnResult" Grid.Column="3" Grid.Row="4" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnResult_Click">=</Button>
-            <Button x:Name="btnPlus" Grid.Column="3" Grid.Row="3" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnOperation_Click">+</Button>
-            <Button x:Name="btnMinus" Grid.Column="3" Grid.Row="2" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnOperation_Click">-</Button>
-            <Button x:Name="btnMal" Grid.Column="3" Grid.Row="1" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnOperation_Click">x</Button>
-            <Button x:Name="btnDurch" Grid.Column="3" Grid.Row="0" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnOperation_Click">/</Button>
-            <Button x:Name="btnC" Grid.Column="2" Grid.Row="0" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnC_Click">C</Button>
-            <Button x:Name="btnCE" Grid.Column="1" Grid.Row="0" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnCE_Click">CE</Button>
+            <Button x:Name="btn0" Grid.Column="1" Grid.Row="4" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="0"/>
+            <Button x:Name="btn1" Grid.Column="0" Grid.Row="3" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="1"/>
+            <Button x:Name="btn2" Grid.Column="1" Grid.Row="3" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="2"/>
+            <Button x:Name="btn3" Grid.Column="2" Grid.Row="3" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="3"/>
+            <Button x:Name="btn4" Grid.Column="0" Grid.Row="2" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="4"/>
+            <Button x:Name="btn5" Grid.Column="1" Grid.Row="2" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="5"/>
+            <Button x:Name="btn6" Grid.Column="2" Grid.Row="2" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="6"/>
+            <Button x:Name="btn7" Grid.Column="0" Grid.Row="1" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="7"/>
+            <Button x:Name="btn8" Grid.Column="1" Grid.Row="1" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="8"/>
+            <Button x:Name="btn9" Grid.Column="2" Grid.Row="1" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="BtnNumbers" Content="9"/>
+            <Button x:Name="PlusMinus" Grid.Column="0" Grid.Row="4" FontSize="36" Background="{x:Null}" BorderThickness="0" Content="+/-"/>
+            <Button x:Name="btnPunkt" Grid.Column="2" Grid.Row="4" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnPunkt_Click" Content=","/>
+            <Button x:Name="btnResult" Grid.Column="3" Grid.Row="4" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnResult_Click" Content="="/>
+            <Button x:Name="btnPlus" Grid.Column="3" Grid.Row="3" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnOperation_Click" Content="+"/>
+            <Button x:Name="btnMinus" Grid.Column="3" Grid.Row="2" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnOperation_Click" Content="-"/>
+            <Button x:Name="btnMal" Grid.Column="3" Grid.Row="1" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnOperation_Click" Content="x"/>
+            <Button x:Name="btnDurch" Grid.Column="3" Grid.Row="0" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnOperation_Click" Content="/"/>
+            <Button x:Name="btnC" Grid.Column="2" Grid.Row="0" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnC_Click" Content="C"/>
+            <Button x:Name="btnCE" Grid.Column="1" Grid.Row="0" FontSize="36" Background="{x:Null}" BorderThickness="0" Click="btnCE_Click" Content="CE"/>
         </Grid>
 
     </Grid>

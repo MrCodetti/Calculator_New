@@ -27,7 +27,7 @@ namespace Calculator
             InitializeComponent();
         }
 
-        
+        bool isDecimal = false;
         private void BtnNumbers(object sender, RoutedEventArgs e)
         {
             if (txtDisplay.Text == "0")
@@ -59,6 +59,7 @@ namespace Calculator
                     txtDisplay.Text += (sender as Button).Content;
                 }
             }
+            isDecimal = false;
         }
 
 
@@ -92,7 +93,7 @@ namespace Calculator
         private void Berechnung(Operation previesOperation)
         {
             List<double> lstNums = null;
-            double sum = 0;
+            double result = 0;
 
             switch (previesOperation)
             {
@@ -100,36 +101,36 @@ namespace Calculator
                     lstNums = txtDisplay.Text.Split('+').Select(double.Parse).ToList();
                     foreach (var item in lstNums)
                     {
-                        sum += item;
+                        result += item;
                     }
-                    txtDisplay.Text = sum.ToString();
+                    txtDisplay.Text = result.ToString();
                     break;
                 case Operation.Minus:
                     lstNums = txtDisplay.Text.Split('-').Select(double.Parse).ToList();
-                    sum = lstNums[0];
+                    result = lstNums[0];
                     for (int i = 1; i < lstNums.Count; i++)
                     {
-                        sum = sum - lstNums[i];
+                        result = result - lstNums[i];
                     }
-                    txtDisplay.Text = sum.ToString();
+                    txtDisplay.Text = result.ToString();
                     break;
                 case Operation.Multi:
                     lstNums = txtDisplay.Text.Split('x').Select(double.Parse).ToList();
-                    sum = lstNums[0];
+                    result = lstNums[0];
                     for (int i = 1; i < lstNums.Count; i++)
                     {
-                        sum = sum * lstNums[i];
+                        result = result * lstNums[i];
                     }
-                    txtDisplay.Text = sum.ToString();
+                    txtDisplay.Text = result.ToString();
                     break;
                 case Operation.Durch:
                     lstNums = txtDisplay.Text.Split('/').Select(double.Parse).ToList();
-                    sum = lstNums[0];
+                    result = lstNums[0];
                     for (int i = 1; i < lstNums.Count; i++)
                     {
-                        sum = sum / lstNums[i];
+                        result = result / lstNums[i];
                     }
-                    txtDisplay.Text = sum.ToString();
+                    txtDisplay.Text = result.ToString();
                     break;
 
 
@@ -179,6 +180,23 @@ namespace Calculator
         {
             previousOperation = Operation.None;
             txtDisplay.Text = "0";
+            isDecimal = false;
+        }
+
+        private void btnPunkt_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isDecimal)
+            {
+                txtDisplay.Text += (sender as Button).Content;
+                isDecimal = true;
+            }
+            else
+            {
+                
+             return;
+                
+            }
+            
         }
     }
 }
